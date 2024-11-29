@@ -47,6 +47,8 @@ public class Exercise6 {
 
         } while (starProgram);
 
+        sc.close();
+
     }
 
     public static void metersToKilometers(){

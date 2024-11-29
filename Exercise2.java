@@ -1,36 +1,45 @@
 import java.util.Scanner;
 
 public class Exercise2 {
-
-    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
 
+        var sc = new Scanner(System.in);
         System.out.println("¿Es palindromo?");
         System.out.println("");
-        System.out.println("Ingresa una palabra");
+        System.out.println("Ingresa una cadena de texto: ");
         String word = sc.nextLine();
         isPalindromo(word);
 
-
     }
 
-    private static void isPalindromo(String word){
+    public static void isPalindromo(String word) {
 
-        String lowercase = word.toLowerCase();
-        String noSigns = lowercase.replace("[!\\\"#$%&'()*+,-./:;<=>?@\\\\[\\\\]^_`{|}~]", " ");
-        String noSpaces = noSigns.trim();
-        String reverseString = "";
+        // pedir una palabra
 
-        for(int i = noSpaces.length() - 1; i >= 0;i--){
+        // validar si es palindromo
+        word = word.replaceAll("[^A-Za-z0-9]+", "");
+        String reverseWord = "";
 
-            reverseString = reverseString + noSpaces.charAt(i);
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reverseWord = reverseWord + word.charAt(i); // la longitud es de 5 pero en indices va hasta4, por eso no
+                                                        // encuentra nada en la posicion 5 y arroja error
         }
 
-        System.out.println(reverseString);
+        if (word.equalsIgnoreCase(reverseWord)) {
+            System.out.println("La cadena es un palindromo.");
+        } else {
+            System.out.println("La cadena no es un palindromo");
+        }
 
+        /*
+         * System.out.println(word);
+         * System.out.println(reverseWord);
+         * System.out.println(word.length());
+         */
 
-        
+        // si lo es, true
+
+        // si no, false
 
     }
-
 }

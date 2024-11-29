@@ -18,6 +18,7 @@ public class Exercise5 {
         int num3 = sc.nextInt();
         sc.nextLine();
         media(num1, num2, num3);
+        sc.close();
     }
 
     public static void media(int num1, int num2, int num3){
